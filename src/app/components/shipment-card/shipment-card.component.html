@@ -1,1 +1,15 @@
-<p>shipment-card works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>N°{{ shipment.trackingNumber }}</mat-card-title>
+    <mat-card-subtitle>{{ shipment.status }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Recipient : {{ shipment.recipient }}</p>
+    <p>Shipping Address : {{ shipment.shippingAddress }}</p>
+    <p>Carrier : {{ shipment.carrier }}</p>
+  </mat-card-content>
+  <mat-card-footer>
+    <p>Expedition Date : {{ shipment.expeditionDate | date : "short" }}</p>
+    <p>Arrival Date : {{ shipment.arrivalDate | date : "short" }}</p>
+  </mat-card-footer>
+</mat-card>

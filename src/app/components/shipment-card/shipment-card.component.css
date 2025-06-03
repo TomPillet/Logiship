@@ -1,0 +1,9 @@
+.mat-mdc-card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mat-card-footer .p {
+  max-width: 50%;
+}

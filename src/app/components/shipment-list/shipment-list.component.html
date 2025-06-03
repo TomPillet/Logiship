@@ -1,5 +1,5 @@
-<mat-grid-list cols="3" rowHeight="2:1">
+<mat-grid-list cols="3" rowHeight="400px">
   <mat-grid-tile *ngFor="let shipment of shipments">
-    <app-shipment-card></app-shipment-card>
+    <app-shipment-card [shipment]="shipment"></app-shipment-card>
   </mat-grid-tile>
 </mat-grid-list>

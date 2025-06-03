@@ -22,7 +22,7 @@ An Angular app providing a little dashboard to follow shipments
 
 - [x] Create main component DashboardComponent
 - [x] Create list component ShipmentListComponent
-- [ ] Create shipments component ShipmentCardComponent
+- [x] Create shipments component ShipmentCardComponent
 - [ ] Create filters component FilterComponent
 
 ### Interactions
