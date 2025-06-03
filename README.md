@@ -13,8 +13,8 @@ An Angular app providing a little dashboard to follow shipments
 
 ### Data and services
 
-- [ ] Create a ShipmentService with JSON mocked data
-- [ ] Use Angular Signals to store shipments list
+- [x] Create a ShipmentService with JSON mocked data
+- [x] Use Angular Signals to store shipments list
 - [ ] Create a method simulating status updates
 - [ ] Add filters
 
