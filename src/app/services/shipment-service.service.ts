@@ -12,7 +12,6 @@ export class ShipmentServiceService {
 
   constructor() {
     this.loadMockData();
-    setInterval(this.randomStatusUpdate, 5000);
   }
 
   private loadMockData() {
@@ -30,21 +29,6 @@ export class ShipmentServiceService {
       return status as ShipmentStatus;
     }
     return ShipmentStatus.PENDING;
-  }
-
-  private randomStatusUpdate() {
-    const randomIndex = Math.floor(Math.random() * this.shipments.length);
-    const shipment = this._shipments()[randomIndex];
-
-    if (
-      shipment.status === ShipmentStatus.CANCELLED ||
-      shipment.status === ShipmentStatus.DELIVERED
-    ) {
-      return;
-    }
-
-    const nextStatus = this.findNextStatus(shipment.status);
-    this.updateStatus(shipment.id, nextStatus);
   }
 
   private updateStatus(id: number, status: ShipmentStatus) {
@@ -78,5 +62,20 @@ export class ShipmentServiceService {
 
   getShipments(): Shipment[] {
     return this.shipments();
+  }
+
+  randomStatusUpdate() {
+    const randomIndex = Math.floor(Math.random() * this.shipments.length);
+    const shipment = this._shipments()[randomIndex];
+
+    if (
+      shipment.status === ShipmentStatus.CANCELLED ||
+      shipment.status === ShipmentStatus.DELIVERED
+    ) {
+      return;
+    }
+
+    const nextStatus = this.findNextStatus(shipment.status);
+    this.updateStatus(shipment.id, nextStatus);
   }
 }
