@@ -9,13 +9,15 @@ import { ShipmentCardComponent } from './components/shipment-card/shipment-card.
 import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ShipmentListComponent,
-    ShipmentCardComponent,
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    DashboardComponent,
     FilterComponent,
+    ShipmentCardComponent,
+    ShipmentListComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, DashboardComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
