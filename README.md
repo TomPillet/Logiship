@@ -6,8 +6,8 @@ An Angular app providing a little dashboard to follow shipments
 
 ### Setup
 
-- [ ] Create project on v16
-- [ ] Install Material
+- [x] Create project on v16
+- [x] Install Material
 - [ ] Create architecture (components, models, services)
 - [ ] Create Typescript model Shipment
 
