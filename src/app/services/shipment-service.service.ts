@@ -6,7 +6,7 @@ import { ShipmentStatus } from '../enums/shipment-status.enum';
 @Injectable({
   providedIn: 'root',
 })
-export class ShipmentServiceService {
+export class ShipmentService {
   private _shipments = signal<Shipment[]>([]);
   public shipments = this._shipments.asReadonly();
 
