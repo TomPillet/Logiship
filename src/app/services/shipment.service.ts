@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import * as shipmentsMock from '../mock/shipments.mock.json';
+import shipmentsMock from '../mock/shipments.mock.json';
 import { Shipment } from '../models/shipment.model';
 import { ShipmentStatus } from '../enums/shipment-status.enum';
 
@@ -15,7 +15,7 @@ export class ShipmentService {
   }
 
   private loadMockData() {
-    const shipmentsData: Shipment[] = shipmentsMock.map((item) => ({
+    const shipmentsData: Shipment[] = shipmentsMock.map((item: any) => ({
       ...item,
       status: this.validateStatus(item.status),
       expeditionDate: new Date(item.expeditionDate),
