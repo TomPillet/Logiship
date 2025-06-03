@@ -11,16 +11,16 @@ import { FilterComponentComponent } from './components/filter-component/filter-c
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponentComponent,
     ShipmentListComponentComponent,
     ShipmentCardComponentComponent,
-    FilterComponentComponent
+    FilterComponentComponent,
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DashboardComponentComponent,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

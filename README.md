@@ -20,7 +20,7 @@ An Angular app providing a little dashboard to follow shipments
 
 ### Components
 
-- [ ] Create main component DashboardComponent
+- [x] Create main component DashboardComponent
 - [ ] Create list component ShipmentListComponent
 - [ ] Create shipments component ShipmentCardComponent
 - [ ] Create filters component FilterComponent
@@ -36,6 +36,7 @@ An Angular app providing a little dashboard to follow shipments
 
 - [ ] Use colors and icons for status
 - [ ] Make the app responsive
+- [ ] Write tests
 
 ### Final
 
