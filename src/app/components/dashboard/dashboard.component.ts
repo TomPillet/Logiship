@@ -5,12 +5,12 @@ import { ShipmentService } from 'src/app/services/shipment.service';
 
 @Component({
   standalone: true,
-  selector: 'app-dashboard-component',
-  templateUrl: './dashboard-component.component.html',
-  styleUrls: ['./dashboard-component.component.css'],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
   imports: [MatGridListModule],
 })
-export class DashboardComponentComponent {
+export class DashboardComponent {
   shipments: Shipment[] = [];
 
   constructor(private shipmentService: ShipmentService) {}
