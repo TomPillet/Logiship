@@ -64,6 +64,10 @@ export class ShipmentServiceService {
     return this.shipments();
   }
 
+  getShipmentsByStatus(status: ShipmentStatus): Shipment[] {
+    return this.shipments().filter((shipment) => shipment.status === status);
+  }
+
   randomStatusUpdate() {
     const randomIndex = Math.floor(Math.random() * this.shipments.length);
     const shipment = this._shipments()[randomIndex];
