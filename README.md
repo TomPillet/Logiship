@@ -16,7 +16,7 @@ An Angular app providing a little dashboard to follow shipments
 - [x] Create a ShipmentService with JSON mocked data
 - [x] Use Angular Signals to store shipments list
 - [x] Create a method simulating status updates
-- [ ] Add filters
+- [x] Add filters
 
 ### Components
 
