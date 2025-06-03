@@ -1,21 +1,13 @@
 import { Component } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { Shipment } from 'src/app/models/shipment.model';
-import { ShipmentService } from 'src/app/services/shipment.service';
+import { ShipmentListComponent } from '../shipment-list/shipment-list.component';
+import { FilterComponent } from '../filter/filter.component';
 
 @Component({
   standalone: true,
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  imports: [MatGridListModule],
+  imports: [MatGridListModule, ShipmentListComponent, FilterComponent],
 })
-export class DashboardComponent {
-  shipments: Shipment[] = [];
-
-  constructor(private shipmentService: ShipmentService) {}
-
-  ngOnInit() {
-    this.shipments = this.shipmentService.getShipments();
-  }
-}
+export class DashboardComponent {}
