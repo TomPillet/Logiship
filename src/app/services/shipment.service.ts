@@ -69,7 +69,7 @@ export class ShipmentService {
   }
 
   randomStatusUpdate() {
-    const randomIndex = Math.floor(Math.random() * this.shipments.length);
+    const randomIndex = Math.floor(Math.random() * this.shipments().length);
     const shipment = this._shipments()[randomIndex];
 
     if (
