@@ -21,6 +21,7 @@ import { ShipmentService } from 'src/app/services/shipment.service';
 })
 export class DashboardComponent {
   public shipments = signal<Shipment[]>([]);
+  public selectedStatus = signal<ShipmentStatus | null>(null);
   public simulationInterval: any;
 
   constructor(private shipmentService: ShipmentService) {}
@@ -30,6 +31,7 @@ export class DashboardComponent {
   }
 
   public onStatusChange(status: ShipmentStatus | null) {
+    this.selectedStatus.set(status);
     this.shipments.set(
       status
         ? this.shipmentService.getShipmentsByStatus(status)
@@ -40,7 +42,10 @@ export class DashboardComponent {
   public startSimulation() {
     this.simulationInterval = setInterval(() => {
       this.shipmentService.randomStatusUpdate();
-      this.shipments.set(this.shipmentService.getShipments());
+      const filteredShipments = this.selectedStatus()
+        ? this.shipmentService.getShipmentsByStatus(this.selectedStatus()!)
+        : this.shipmentService.getShipments();
+      this.shipments.set(filteredShipments);
     }, 5000);
   }
 
