@@ -37,6 +37,7 @@ An Angular app providing a little dashboard to follow shipments
 - [x] Deal with loading timers & add feedbacks
 - [ ] Make the app responsive
 - [ ] Write tests
+- [ ] Host project on https://logiship.tompillet.com
 
 ### Final
 
