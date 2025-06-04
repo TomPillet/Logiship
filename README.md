@@ -69,3 +69,10 @@ We must also config the new builder logic.
 
 **NB :** We can use this command to automatically migrate all templates :
 `ng generate @angular/core:control-flow`
+
+### Difficulties
+
+I didn't find a way to use the new builer "application". I must keep using the "browser" one, because of Angular focusing the v20 in order to update the builder. Even by forcing the use of `@angular/cli@17` in the command below :
+`ng update @angular/cli@17 --name use-application-builder`
+
+So I'll leave the project as it and work on some little adjustments, before hosting it.
