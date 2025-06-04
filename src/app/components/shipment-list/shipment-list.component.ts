@@ -13,7 +13,7 @@ import { ShipmentCardComponent } from '../shipment-card/shipment-card.component'
   imports: [CommonModule, MatGridListModule, ShipmentCardComponent],
 })
 export class ShipmentListComponent {
-  shipments: Shipment[] = [];
+  public shipments: Shipment[] = [];
 
   constructor(private shipmentService: ShipmentService) {}
 

@@ -12,7 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class ShipmentCardComponent {
   @Input()
-  shipment!: Shipment;
+  public shipment!: Shipment;
 
   constructor() {}
 }
