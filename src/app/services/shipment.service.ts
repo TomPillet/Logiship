@@ -60,15 +60,15 @@ export class ShipmentService {
     return nextStatus;
   }
 
-  getShipments(): Shipment[] {
+  public getShipments(): Shipment[] {
     return this.shipments();
   }
 
-  getShipmentsByStatus(status: ShipmentStatus): Shipment[] {
+  public getShipmentsByStatus(status: ShipmentStatus): Shipment[] {
     return this.shipments().filter((shipment) => shipment.status === status);
   }
 
-  randomStatusUpdate() {
+  public randomStatusUpdate() {
     const randomIndex = Math.floor(Math.random() * this.shipments().length);
     const shipment = this._shipments()[randomIndex];
 
