@@ -1,1 +1,6 @@
-<p>filter works!</p>
+<mat-chip-listbox aria-label="Status selection">
+  <mat-chip-option color="accent" selected>All</mat-chip-option>
+  <mat-chip-option *ngFor="let status of status" [value]="status">
+    {{ status }}
+  </mat-chip-option>
+</mat-chip-listbox>
