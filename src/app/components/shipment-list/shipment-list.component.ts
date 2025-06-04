@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { Shipment } from 'src/app/models/shipment.model';
@@ -9,7 +9,7 @@ import { ShipmentCardComponent } from '../shipment-card/shipment-card.component'
   selector: 'app-shipment-list',
   templateUrl: './shipment-list.component.html',
   styleUrls: ['./shipment-list.component.css'],
-  imports: [CommonModule, MatGridListModule, ShipmentCardComponent],
+  imports: [MatGridListModule, ShipmentCardComponent],
 })
 export class ShipmentListComponent {
   @Input() shipments: Shipment[] = [];

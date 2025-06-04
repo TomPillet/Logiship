@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ShipmentStatus } from 'src/app/enums/shipment-status.enum';
 import { MatChipsModule } from '@angular/material/chips';
 
@@ -8,7 +8,7 @@ import { MatChipsModule } from '@angular/material/chips';
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css'],
-  imports: [CommonModule, MatChipsModule],
+  imports: [MatChipsModule],
 })
 export class FilterComponent {
   @Output() selectedStatusChange = new EventEmitter<ShipmentStatus | null>();
