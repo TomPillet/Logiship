@@ -3,7 +3,8 @@ mat-card {
   width: 100%;
   height: 100%;
   justify-content: space-between;
-  border: 2px solid #3f51b5;
+  background-color: #fbf6f6;
+  border: 2px solid #e0e0e0;
 }
 
 mat-card-footer {

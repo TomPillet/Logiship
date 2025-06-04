@@ -1,7 +1,10 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>N°{{ shipment.trackingNumber }}</mat-card-title>
-    <mat-card-subtitle>{{ shipment.status }}</mat-card-subtitle>
+    <mat-card-subtitle
+      [ngStyle]="{ color: getColorByStatus(shipment.status) }"
+      >{{ shipment.status }}</mat-card-subtitle
+    >
   </mat-card-header>
   <mat-card-content>
     <p>Recipient : {{ shipment.recipient }}</p>

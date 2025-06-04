@@ -33,8 +33,8 @@ An Angular app providing a little dashboard to follow shipments
 
 ### Bonus
 
-- [ ] Use colors and icons for status
-- [ ] Deal with loading timers & add feedbacks
+- [x] Use colors or icons for status
+- [x] Deal with loading timers & add feedbacks
 - [ ] Make the app responsive
 - [ ] Write tests
 
