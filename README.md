@@ -29,12 +29,12 @@ An Angular app providing a little dashboard to follow shipments
 
 - [x] Connect Signals to templates
 - [ ] Implement filters with computed Signals
-- [ ] Add realtime simulation (using intervals on status)
-- [ ] Deal with loading timers
+- [x] Add realtime simulation (using intervals on status)
 
 ### Bonus
 
 - [ ] Use colors and icons for status
+- [ ] Deal with loading timers & add feedbacks
 - [ ] Make the app responsive
 - [ ] Write tests
 
