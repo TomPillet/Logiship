@@ -42,3 +42,27 @@ An Angular app providing a little dashboard to follow shipments
 ### Final
 
 - [ ] Migrate all to Angular v17
+
+## What are the main differences between v16 and v17 ?
+
+Between Angular 16 and Angular 17, we can find many differences going from major new features to developer experience evolutions, to improvements in the framework.
+
+For example, as main new features, Angular 17 replaces `*ngIf`, `*ngFor` and `*ngSwitch` by `@if`, `@for` and `@switch`. Angular developers have also improved SSR and hydration process, implemented a new app builder based on Vite & esbuild, enchanced Signals, made components standalone by default, etc.
+
+### Migrate Logiship from v16 to v17
+
+In the context of Logiship, we don't have much to do if we proceed in this version migration, but still the objective remains important and instructive.
+
+The exercise will be a good way to practice Angular, its documentation, and learn to be attentive on framework evolutions.
+
+### Plan of migration
+
+First, run this command : `ng update @angular/core@17 @angular/cli@17`
+
+Then, run `npm audit` to see if some dependecies need a fix. **Attention :** don't use `npm audit fix --force`, otherwise it could destroy the whole project environment by forcing some packages to be updated, while it wouldn't be necessary...
+
+Finally, test the application with `ng serve`. If it runs without errors, it's perfect !
+All we'll have to do, is implement some new features, according to the documented framework evolutions.
+
+In our case, I've already found that we must replace all `*ngIf` and `*ngFor` by the new control flow syntax.
+We must also config the new builder logic.
