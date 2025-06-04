@@ -2,3 +2,8 @@ app-shipment-card {
   height: 100%;
   width: 100%;
 }
+
+mat-grid-list {
+  width: 90%;
+  margin: auto;
+}
