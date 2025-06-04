@@ -81,11 +81,12 @@ export class ShipmentService {
 
     const nextStatus = this.findNextStatus(shipment.status);
     this.updateStatus(shipment.id, nextStatus);
-    return { success: true, shipment: shipment };
+    return { success: true, shipment: shipment, nextStatus };
   }
 }
 
-interface RandomStatusUpdateResponse {
+export interface RandomStatusUpdateResponse {
   success: boolean;
   shipment: Shipment;
+  nextStatus?: ShipmentStatus;
 }

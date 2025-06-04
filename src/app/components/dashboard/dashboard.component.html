@@ -16,18 +16,23 @@
   </button>
 </div>
 <div
-  *ngIf="simulatedShipment()"
+  *ngIf="simulatedResponse()"
   [className]="
-    'simulated-shipment' + (simulatedResult() ? ' success' : ' error')
+    'simulated-shipment' +
+    (simulatedResponse()?.success ? ' success' : ' error')
   "
 >
-  <p *ngIf="simulatedResult()">
-    Shipment N°{{ simulatedShipment()?.trackingNumber }} has been updated to
-    {{ simulatedShipment()?.status }}
+  <p *ngIf="simulatedResponse()?.success">
+    Shipment N°<b>{{ simulatedResponse()?.shipment?.trackingNumber }}</b> has
+    been updated to
+    <b>{{ simulatedResponse()?.nextStatus }}</b>
   </p>
-  <p *ngIf="!simulatedResult()">
-    Can't update shipment N°{{ simulatedShipment()?.trackingNumber }}, its
-    status is already on {{ simulatedShipment()?.status }}
+  <p *ngIf="!simulatedResponse()?.success">
+    Can't update shipment N°<b>{{
+      simulatedResponse()?.shipment?.trackingNumber
+    }}</b
+    >, its status is already on
+    <b>{{ simulatedResponse()?.shipment?.status }}</b>
   </p>
 </div>
 <app-shipment-list [shipments]="shipments()"></app-shipment-list>
