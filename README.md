@@ -66,3 +66,6 @@ All we'll have to do, is implement some new features, according to the documente
 
 In our case, I've already found that we must replace all `*ngIf` and `*ngFor` by the new control flow syntax.
 We must also config the new builder logic.
+
+**NB :** We can use this command to automatically migrate all templates :
+`ng generate @angular/core:control-flow`
