@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ShipmentListComponent } from '../shipment-list/shipment-list.component';
 import { FilterComponent } from '../filter/filter.component';
@@ -11,20 +12,39 @@ import { ShipmentService } from 'src/app/services/shipment.service';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  imports: [MatGridListModule, ShipmentListComponent, FilterComponent],
+  imports: [
+    MatButtonModule,
+    MatGridListModule,
+    ShipmentListComponent,
+    FilterComponent,
+  ],
 })
 export class DashboardComponent {
-  public shipments: Shipment[] = [];
+  public shipments = signal<Shipment[]>([]);
+  public simulationInterval: any;
 
   constructor(private shipmentService: ShipmentService) {}
 
   ngOnInit() {
-    this.shipments = this.shipmentService.getShipments();
+    this.shipments.set(this.shipmentService.getShipments());
   }
 
   public onStatusChange(status: ShipmentStatus | null) {
-    this.shipments = status
-      ? this.shipmentService.getShipmentsByStatus(status)
-      : this.shipmentService.getShipments();
+    this.shipments.set(
+      status
+        ? this.shipmentService.getShipmentsByStatus(status)
+        : this.shipmentService.getShipments()
+    );
+  }
+
+  public startSimulation() {
+    this.simulationInterval = setInterval(() => {
+      this.shipmentService.randomStatusUpdate();
+      this.shipments.set(this.shipmentService.getShipments());
+    }, 5000);
+  }
+
+  public stopSimulation() {
+    clearInterval(this.simulationInterval);
   }
 }

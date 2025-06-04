@@ -1,2 +1,10 @@
 <app-filter (selectedStatusChange)="onStatusChange($event)"></app-filter>
-<app-shipment-list [shipments]="shipments"></app-shipment-list>
+<div class="actions">
+  <button mat-button color="primary" (click)="startSimulation()">
+    Start simulation
+  </button>
+  <button mat-button color="warn" (click)="stopSimulation()">
+    Stop simulation
+  </button>
+</div>
+<app-shipment-list [shipments]="shipments()"></app-shipment-list>
