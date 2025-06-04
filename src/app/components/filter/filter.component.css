@@ -1,0 +1,14 @@
+.filters-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: auto;
+}
+
+.filters-listbox {
+  div {
+    flex-flow: nowrap !important;
+  }
+}

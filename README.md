@@ -27,7 +27,7 @@ An Angular app providing a little dashboard to follow shipments
 
 ### Interactions
 
-- [ ] Connect Signals to templates
+- [x] Connect Signals to templates
 - [ ] Implement filters with computed Signals
 - [ ] Add realtime simulation (using intervals on status)
 - [ ] Deal with loading timers

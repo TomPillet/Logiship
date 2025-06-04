@@ -1,6 +1,12 @@
-<mat-chip-listbox aria-label="Status selection">
-  <mat-chip-option color="accent" selected>All</mat-chip-option>
-  <mat-chip-option *ngFor="let status of status" [value]="status">
-    {{ status }}
-  </mat-chip-option>
-</mat-chip-listbox>
+<div class="filters-container">
+  <h2>Filters</h2>
+  <mat-chip-listbox class="filters-listbox" aria-label="Status selection">
+    <mat-chip-option
+      *ngFor="let s of status"
+      [value]="s"
+      (click)="onStatusSelect(s)"
+    >
+      {{ s }}
+    </mat-chip-option>
+  </mat-chip-listbox>
+</div>

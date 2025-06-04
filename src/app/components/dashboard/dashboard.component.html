@@ -1,2 +1,2 @@
-<app-filter></app-filter>
-<app-shipment-list></app-shipment-list>
+<app-filter (selectedStatusChange)="onStatusChange($event)"></app-filter>
+<app-shipment-list [shipments]="shipments"></app-shipment-list>
