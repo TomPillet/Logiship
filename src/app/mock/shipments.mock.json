@@ -4,7 +4,7 @@
     "trackingNumber": 1234567890,
     "recipient": "John Smith",
     "shippingAddress": "123 Main St, New York, NY 10001",
-    "status": "DELIVERED",
+    "status": "PENDING",
     "carrier": "DHL",
     "expeditionDate": "2024-05-15T08:30:00.000Z",
     "arrivalDate": "2024-05-18T14:20:00.000Z"
@@ -34,7 +34,7 @@
     "trackingNumber": 4567890123,
     "recipient": "Emily Davis",
     "shippingAddress": "321 Elm Dr, Miami, FL 33101",
-    "status": "DELIVERED",
+    "status": "IN_TRANSIT",
     "carrier": "USPS",
     "expeditionDate": "2024-05-12T13:45:00.000Z",
     "arrivalDate": "2024-05-16T09:15:00.000Z"
@@ -44,7 +44,7 @@
     "trackingNumber": 5678901234,
     "recipient": "David Wilson",
     "shippingAddress": "654 Maple Ln, Seattle, WA 98101",
-    "status": "CANCELLED",
+    "status": "PENDING",
     "carrier": "DHL",
     "expeditionDate": "2024-05-22T11:20:00.000Z",
     "arrivalDate": "2024-05-25T15:00:00.000Z"
@@ -94,7 +94,7 @@
     "trackingNumber": 1122334455,
     "recipient": "Amanda White",
     "shippingAddress": "741 Poplar Blvd, Portland, OR 97201",
-    "status": "DELIVERED",
+    "status": "CANCELLED",
     "carrier": "FedEx",
     "expeditionDate": "2024-05-19T08:15:00.000Z",
     "arrivalDate": "2024-05-22T14:40:00.000Z"
