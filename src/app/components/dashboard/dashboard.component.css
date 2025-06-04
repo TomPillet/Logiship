@@ -1,5 +1,46 @@
 .actions {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.loading-icon {
+  display: none;
+  animation: spinAnimation 1s infinite linear;
+  animation-play-state: paused;
+
+  &.spin {
+    display: block;
+    animation-play-state: running;
+  }
+}
+
+.simulated-shipment {
+  margin: auto;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-align: center;
+  width: fit-content;
+
+  p {
+    margin: 0;
+  }
+
+  &.error {
+    background-color: #f46358;
+    color: white;
+  }
+
+  &.success {
+    background-color: #71c474;
+    color: white;
+  }
+}
+
+@keyframes spinAnimation {
+  to {
+    transform: rotate(360deg);
+  }
 }

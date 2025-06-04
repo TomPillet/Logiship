@@ -3,8 +3,31 @@
   <button mat-button color="primary" (click)="startSimulation()">
     Start simulation
   </button>
+  <mat-icon
+    class="loading-icon"
+    [class.spin]="isSimulationRunning()"
+    aria-hidden="false"
+    aria-label="Simulation loading icon"
+  >
+    autorenew
+  </mat-icon>
   <button mat-button color="warn" (click)="stopSimulation()">
     Stop simulation
   </button>
+</div>
+<div
+  *ngIf="simulatedShipment()"
+  [className]="
+    'simulated-shipment' + (simulatedResult() ? ' success' : ' error')
+  "
+>
+  <p *ngIf="simulatedResult()">
+    Shipment N°{{ simulatedShipment()?.trackingNumber }} has been updated to
+    {{ simulatedShipment()?.status }}
+  </p>
+  <p *ngIf="!simulatedResult()">
+    Can't update shipment N°{{ simulatedShipment()?.trackingNumber }}, its
+    status is already on {{ simulatedShipment()?.status }}
+  </p>
 </div>
 <app-shipment-list [shipments]="shipments()"></app-shipment-list>

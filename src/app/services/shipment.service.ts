@@ -68,7 +68,7 @@ export class ShipmentService {
     return this.shipments().filter((shipment) => shipment.status === status);
   }
 
-  public randomStatusUpdate() {
+  public randomStatusUpdate(): RandomStatusUpdateResponse {
     const randomIndex = Math.floor(Math.random() * this.shipments().length);
     const shipment = this._shipments()[randomIndex];
 
@@ -76,10 +76,16 @@ export class ShipmentService {
       shipment.status === ShipmentStatus.CANCELLED ||
       shipment.status === ShipmentStatus.DELIVERED
     ) {
-      return;
+      return { success: false, shipment: shipment };
     }
 
     const nextStatus = this.findNextStatus(shipment.status);
     this.updateStatus(shipment.id, nextStatus);
+    return { success: true, shipment: shipment };
   }
+}
+
+interface RandomStatusUpdateResponse {
+  success: boolean;
+  shipment: Shipment;
 }
