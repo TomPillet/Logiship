@@ -1,9 +1,17 @@
-.mat-mdc-card-footer {
-  display: flex;
-  flex-direction: row;
+mat-card {
+  box-shadow: none !important;
+  width: 100%;
+  height: 100%;
   justify-content: space-between;
+  border: 2px solid #3f51b5;
 }
 
-.mat-card-footer .p {
-  max-width: 50%;
+mat-card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  p {
+    width: fit-content;
+  }
 }

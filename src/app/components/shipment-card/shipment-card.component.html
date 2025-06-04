@@ -9,7 +9,13 @@
     <p>Carrier : {{ shipment.carrier }}</p>
   </mat-card-content>
   <mat-card-footer>
-    <p>Expedition Date : {{ shipment.expeditionDate | date : "short" }}</p>
-    <p>Arrival Date : {{ shipment.arrivalDate | date : "short" }}</p>
+    <p>
+      Expedition Date :<br />
+      {{ shipment.expeditionDate | date : "short" }}
+    </p>
+    <p>
+      Arrival Date :<br />
+      {{ shipment.arrivalDate | date : "short" }}
+    </p>
   </mat-card-footer>
 </mat-card>
