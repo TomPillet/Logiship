@@ -22,8 +22,8 @@ import {
     MatGridListModule,
     MatIconModule,
     ShipmentListComponent,
-    FilterComponent
-],
+    FilterComponent,
+  ],
 })
 export class DashboardComponent {
   public isSimulationRunning = signal<boolean>(false);
@@ -67,6 +67,14 @@ export class DashboardComponent {
       ? this.shipmentService.getShipmentsByStatus(status)
       : this.shipmentService.getShipments();
     this.shipments.set(shipmentsToDisplay);
+  }
+
+  public resetShipments() {
+    this.stopSimulation();
+    this.selectedStatus.set(null);
+    this.simulatedResponse.set(null);
+    this.shipmentService.resetShipments();
+    this.updateShipments();
   }
 
   ngOnDestroy() {

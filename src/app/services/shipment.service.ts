@@ -83,6 +83,10 @@ export class ShipmentService {
     this.updateStatus(shipment.id, nextStatus);
     return { success: true, shipment: shipment, nextStatus };
   }
+
+  public resetShipments() {
+    this.loadMockData();
+  }
 }
 
 export interface RandomStatusUpdateResponse {

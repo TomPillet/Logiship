@@ -38,18 +38,19 @@ An Angular app providing a little dashboard to follow shipments
 - [ ] Make the app responsive
 - [ ] Write tests
 - [ ] Host project on https://logiship.tompillet.com
+- [x] Add a reset button
 
 ### Final
 
-- [ ] Migrate all to Angular v17
+- [x] Migrate all to Angular v17
 
-## What are the main differences between v16 and v17 ?
+## Migrate Logiship from Angular v16 to v17
+
+### What are the main differences between v16 and v17 ?
 
 Between Angular 16 and Angular 17, we can find many differences going from major new features to developer experience evolutions, to improvements in the framework.
 
 For example, as main new features, Angular 17 replaces `*ngIf`, `*ngFor` and `*ngSwitch` by `@if`, `@for` and `@switch`. Angular developers have also improved SSR and hydration process, implemented a new app builder based on Vite & esbuild, enchanced Signals, made components standalone by default, etc.
-
-### Migrate Logiship from v16 to v17
 
 In the context of Logiship, we don't have much to do if we proceed in this version migration, but still the objective remains important and instructive.
 

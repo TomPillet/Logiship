@@ -1,4 +1,7 @@
-<app-filter (selectedStatusChange)="onStatusChange($event)"></app-filter>
+<app-filter
+  [selectedStatus]="selectedStatus()"
+  (selectedStatusChange)="onStatusChange($event)"
+></app-filter>
 <div class="actions">
   <button mat-button color="primary" (click)="startSimulation()">
     Start simulation
@@ -8,36 +11,38 @@
     [class.spin]="isSimulationRunning()"
     aria-hidden="false"
     aria-label="Simulation loading icon"
-    >
+  >
     autorenew
   </mat-icon>
   <button mat-button color="warn" (click)="stopSimulation()">
     Stop simulation
   </button>
+  <button mat-button color="accent" (click)="resetShipments()">
+    Reset shipments
+  </button>
 </div>
 @if (simulatedResponse()) {
-  <div
+<div
   [className]="
     'simulated-shipment' +
     (simulatedResponse()?.success ? ' success' : ' error')
   "
-    >
-    @if (simulatedResponse()?.success) {
-      <p>
-        Shipment N°<b>{{ simulatedResponse()?.shipment?.trackingNumber }}</b> has
-        been updated to
-        <b>{{ simulatedResponse()?.nextStatus }}</b>
-      </p>
-    }
-    @if (!simulatedResponse()?.success) {
-      <p>
-        Can't update shipment N°<b>{{
-        simulatedResponse()?.shipment?.trackingNumber
-        }}</b
-        >, its status is already on
-        <b>{{ simulatedResponse()?.shipment?.status }}</b>
-      </p>
-    }
-  </div>
+>
+  @if (simulatedResponse()?.success) {
+  <p>
+    Shipment N°<b>{{ simulatedResponse()?.shipment?.trackingNumber }}</b> has
+    been updated to
+    <b>{{ simulatedResponse()?.nextStatus }}</b>
+  </p>
+  } @if (!simulatedResponse()?.success) {
+  <p>
+    Can't update shipment N°<b>{{
+      simulatedResponse()?.shipment?.trackingNumber
+    }}</b
+    >, its status is already on
+    <b>{{ simulatedResponse()?.shipment?.status }}</b>
+  </p>
+  }
+</div>
 }
 <app-shipment-list [shipments]="shipments()"></app-shipment-list>
