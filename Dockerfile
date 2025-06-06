@@ -8,4 +8,4 @@ COPY . .
 RUN npm run build
 
 EXPOSE 4200
-CMD ["sh", "-c", "npm start"]
+CMD ["npm start prod"]
