@@ -77,3 +77,5 @@ I didn't find a way to use the new builer "application". I must keep using the "
 `ng update @angular/cli@17 --name use-application-builder`
 
 So I'll leave the project as it and work on some little adjustments, before hosting it.
+
+**Edit on hosting :** now I face some problems within the Dockerfile I think. My angular app is built on the server, but somehow, we can access it due to header errors. I found that Angular may be particular to build with Docker, I'll try to figure this out later.
